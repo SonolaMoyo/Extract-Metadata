@@ -2,7 +2,7 @@ import distExiftool from 'dist-exiftool';
 import exiftool from 'node-exiftool';
 import fs from 'fs';
 import path from 'path';
-import DataModel from "../model/main.model.js"
+import DataModel from '../model/main.model.js';
 
 createMetaData = async (req, res, next) => {
   try {
@@ -22,20 +22,22 @@ createMetaData = async (req, res, next) => {
       .then(() => ep.readMetadata(rs, ['-File:all']))
       .then(async (result) => {
         let metadata = new DataModel({
-            fileName: req.file.filename,
-            originalName: req.file.originalname,
-            size: req.file.size,
-            information: result.data[0]
-        })
+          fileName: req.file.filename,
+          originalName: req.file.originalname,
+          size: req.file.size,
+          information: result.data[0],
+        });
         metadata = await metadata.save();
-        return res.status(200).json({metadata})
+        return res.status(200).json({ metadata });
       })
-      .then(()=>ep.close(), ()=>ep.close())
+      .then(
+        () => ep.close(),
+        () => ep.close()
+      )
       .catch(console.error);
   } catch (error) {
-    next(error)
+    next(error);
   }
 };
 
-
-export default {createMetaData}
+export default { createMetaData };

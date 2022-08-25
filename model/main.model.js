@@ -1,22 +1,25 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-const savedData = new mongoose.Schema({
-    fileName:{
-        type: String,
-        required: true,
-        index: true
+const savedData = new mongoose.Schema(
+  {
+    fileName: {
+      type: String,
+      required: true,
+      index: true,
     },
     originalName: {
-        type: String
+      type: String,
     },
     size: {
-        type: Number
+      type: Number,
     },
     information: {
-        type: Object
-    }
-},{timestamps: true})
+      type: Object,
+    },
+  },
+  { timestamps: true }
+);
 
-const DataModel = mongoose.model('Metadata', savedData)
+const DataModel = mongoose.model('Metadata', savedData);
 
-export {DataModel}
+export { DataModel };
