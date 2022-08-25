@@ -4,7 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import DataModel from '../model/main.model.js';
 
-createMetaData = async (req, res, next) => {
+const createMetaData = async (req, res, next) => {
   try {
     if (!req.file) {
       return res

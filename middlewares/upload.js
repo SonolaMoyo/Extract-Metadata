@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage }).single('file');
 
-uploadFile = (req, res, next) => {
+const uploadFile = (req, res, next) => {
   try {
     upload(req, res, function (err) {
       if (err instanceof multer.MulterError) {

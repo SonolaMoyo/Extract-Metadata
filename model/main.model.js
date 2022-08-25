@@ -22,4 +22,4 @@ const savedData = new mongoose.Schema(
 
 const DataModel = mongoose.model('Metadata', savedData);
 
-export { DataModel };
+export default { DataModel };

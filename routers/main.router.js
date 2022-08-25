@@ -1,9 +1,9 @@
-import upload from '../middlewares/upload';
-import mainController from '../controllers/main.controller';
+import uploadFile from '../middlewares/upload.js';
+import mainController from '../controllers/main.controller.js';
 import express from 'express';
 
 const router = express.Router();
 
-router.post('/extractdata', upload, mainController.createMetaData);
+router.post('/extractdata', uploadFile.uploadFile, mainController.createMetaData);
 
-export default { router };
+export { router };
