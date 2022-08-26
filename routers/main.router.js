@@ -4,6 +4,7 @@ import express from 'express';
 
 const router = express.Router();
 
-router.post('/extractdata', uploadFile.uploadFile, mainController.createMetaData);
+router.post('/extractmetadata', uploadFile.uploadFile, mainController.createMetaData);
+router.post('/writemetadata', uploadFile.uploadFile, mainController.writeMetaData)
 
 export { router };
