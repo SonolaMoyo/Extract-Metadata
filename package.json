@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cross-zip": "^4.0.0",
     "dist-exiftool": "^10.53.0",
     "dotenv": "^16.0.1",
     "exiftool": "^0.0.3",
