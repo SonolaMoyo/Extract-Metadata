@@ -14,7 +14,7 @@ const readFile = async (filename) => {
     }
     const ep = new exiftool.ExiftoolProcess(distExiftool);
     ep.open()
-      .then(() => ep.readMetadata(rs, ['-a', '-u', '-g1']))
+      .then(() => ep.readMetadata(tempPath, ['-a', '-u', '-g1']))
       .then((res) => {
         console.log(res);
       })
@@ -26,4 +26,4 @@ const readFile = async (filename) => {
 };
 
 
-readFile('image1.jpg');
+readFile('note_manager.zip');
