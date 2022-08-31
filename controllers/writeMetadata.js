@@ -6,7 +6,7 @@ const __dirname = path.resolve();
 
 const writeFolder = async (directory) => {
   try {
-    const tempPath = path.join(__dirname, '/public/upload', directory);
+    const tempPath = directory; /*path.join(__dirname, '/public/upload', directory);*/
     console.log(tempPath);
     const rs = fs.createReadStream(tempPath);
     if (!rs) {
@@ -28,8 +28,13 @@ const writeFolder = async (directory) => {
       .then(() => ep.close())
       .catch(console.error);
   } catch (error) {
-    console.log(`There's error ${error}`);
+    console.log(`There's error, Cannot writeFiles ${error}`);
   }
 };
 
-writeFolder('note_manager.zip');
+// const thePath = 'note_manager.zip'
+// writeFolder(thePath);
+
+
+//export writeMetadata function
+export default {writeFolder}
