@@ -6,7 +6,7 @@ const __dirname = path.resolve();
 
 const readFolder = async (directory) => {
   try {
-    const tempPath = path.join(__dirname, '/public/upload/', directory);
+    const tempPath = directory; /*path.join(__dirname, '/public/upload/', directory);*/
     console.log(tempPath);
     const rs = fs.createReadStream(tempPath);
     if (!rs) {
@@ -21,9 +21,9 @@ const readFolder = async (directory) => {
       .then(() => ep.close())
       .catch(console.error);
   } catch (error) {
-    console.log(`There's an error ${error}`);
+    console.log(`There's an error, Cannot Read File${error}`);
   }
 };
 
-
-readFolder('image1.jpg');
+const thePath = 'C:\\Users\\USER\\works\\extractMetadata\\public\\upload\\Folder\\TECHATHON-1.0-NODEJS-week_2\\week_2\\auth.js'
+readFolder(thePath);
