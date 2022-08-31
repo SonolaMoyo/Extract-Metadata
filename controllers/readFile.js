@@ -25,4 +25,5 @@ const readFile = async (filename) => {
   }
 };
 
+
 readFile('image1.jpg');
